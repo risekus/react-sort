@@ -6,7 +6,7 @@ const App: React.FC = () => {
   const [array, setArray] = useState<number[] | null>(null)
   const [flag, setFlag] = useState<number>(0)
   const [visualizers, setVisualizers] = useState<number[]>([0, 1]); // visualizer id 목록
-  const [arrayLength, setArrayLength] = useState<number>(50);
+  const [arrayLength, setArrayLength] = useState<string>("50");
   let nextId = useRef(2); // 새 visualizer id를 위한 ref
 
   const resetAllArray = () => {
@@ -45,7 +45,7 @@ const App: React.FC = () => {
         <button onClick={pauseAll} >pause All</button>
         <button onClick={createNewVisualizer}>+</button>
         <button onClick={deleteVisualizer}>-</button>
-        <input type="number" min="0" max="500" value={arrayLength} onChange = {(e) => setArrayLength(Number(e.target.value))} style={{width:'60px'}} />
+        <input type="string" value={arrayLength} onChange = {(e) => setArrayLength(e.target.value)} style={{width:'60px'}} />
       </div>
       <div style={{
         display: 'grid',

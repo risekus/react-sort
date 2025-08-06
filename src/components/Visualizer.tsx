@@ -12,11 +12,10 @@ interface VisualizerProps {
 
 const Visualizer: React.FC<VisualizerProps> = ({handleFlag, sharedArray, flag}) => {
   const [array, setArray] = useState<number[]>([]);
-  // const [original, setOriginal] = useState<number[]>([]);
   const [sorting, setSorting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [compareCount, setCompareCount] = useState(0);
-  const [arrayLength, setArrayLength] = useState<number>(50);
+  const [arrayLength, setArrayLength] = useState<string>("50");
 
   const isPauseRef = React.useRef(isPaused);
   const isCancelled = React.useRef(false);

@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# 🔢 정렬 알고리즘 시각화기 (Sorting Algorithm Visualizer)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 **React + TypeScript**로 개발된 정렬 알고리즘 시각화 애플리케이션입니다.  
+여러 개의 `visualizer(이하 시각화기)`를 동시에 생성하여 다양한 정렬 알고리즘이 작동하는 과정을 단계별로 관찰할 수 있습니다.
 
-## Available Scripts
+![Demo Screenshot](./publc/screenshot.png)
 
-In the project directory, you can run:
+## ✨ 주요 기능
 
-### `npm start`
+### 사용법  
+1. 원하는 만큼 시각화기를 생성
+2. 각 시각화기에 대해 원하는 정렬을 선택
+3. 개별 버튼으로 시작하거나, 통합 버튼으로 `동일한 배열`을 정렬하여 비교 가능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📊 다양한 정렬 알고리즘 시각화:
+  - 버블 정렬 (Bubble Sort)
+  - 삽입 정렬 (Insertion Sort)
+  - 병합 정렬 (Merge Sort)
+  - 퀵 정렬 (Quick Sort)
+  - 선택 정렬 (Selection Sort)
+- ➕ 시각화기를 여러 개 추가하거나 제거 가능
+- 🔁 모든 시각화기에 대해 전체 시작, 초기화, 일시정지 기능 제공
+- 🔢 정렬에 사용할 배열 크기 커스텀 가능
+- 당연히 모든 visualizer는 각각 커스텀 가능
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧩 사용 기술
 
-### `npm test`
+- React
+- TypeScript
+- CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 설치 및 실행
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+git clone https://github.com/risekus/react-sort.git
+cd react-sort
+npm install
+npm start

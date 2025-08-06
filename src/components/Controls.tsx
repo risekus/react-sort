@@ -15,7 +15,7 @@ interface ControlsProps {
     disabled: boolean;
     compareCount: number | null;
     flag: number;
-    arrayLength: number;
+    arrayLength: string;
 }
 
 const Controls: React.FC<ControlsProps> = ({ onStart, onReset, 
@@ -37,7 +37,6 @@ const Controls: React.FC<ControlsProps> = ({ onStart, onReset,
     useEffect(() => {
 			const run = async () => {
         if (flag === 2) {
-					console.log("전체실행")
           await onStart(algoMap[selected]);
         }
 			}
@@ -66,7 +65,10 @@ const Controls: React.FC<ControlsProps> = ({ onStart, onReset,
                 <button onClick={onPause} disabled={!disabled}>
                     {isPaused ? 'Resume' : 'Pause'}
                 </button>
-                <input type="number" min="0" max="500" value={arrayLength} onChange = {(e) => setArrayLength(Number(e.target.value))} style={{width:'60px'}} />
+                <input type="string" 
+                    value={arrayLength}
+                    onChange={(e) => setArrayLength(e.target.value)} 
+										style={{width:'60px'}} />
             </div>
             <div className="compareCount">
                 {compareCount !== null ? `비교 횟수(Comparisons): ${compareCount}` : 'Comparisons: 0'}
