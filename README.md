@@ -3,7 +3,9 @@
 이 프로젝트는 **React + TypeScript**로 개발된 정렬 알고리즘 시각화 애플리케이션입니다.  
 여러 개의 `visualizer(이하 시각화기)`를 동시에 생성하여 다양한 정렬 알고리즘이 작동하는 과정을 단계별로 관찰할 수 있습니다.
 
-![Demo Screenshot](./publc/screenshot.png)
+![Demo Screenshot](./public/screenshot.png)
+![정렬 알고리즘 시각화 페이지 링크](https://uisin.net/dev/react-sort)
+![개발 서버 링크](https://uisin.net/dev/)
 
 ## ✨ 주요 기능
 
