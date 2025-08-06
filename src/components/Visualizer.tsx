@@ -16,6 +16,7 @@ const Visualizer: React.FC<VisualizerProps> = ({handleFlag, sharedArray, flag}) 
   const [sorting, setSorting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [compareCount, setCompareCount] = useState(0);
+  const [arrayLength, setArrayLength] = useState<number>(50);
 
   const isPauseRef = React.useRef(isPaused);
   const isCancelled = React.useRef(false);
@@ -39,7 +40,7 @@ const Visualizer: React.FC<VisualizerProps> = ({handleFlag, sharedArray, flag}) 
   }, []);
 
   const resetArray = () => {
-    const newArray = generateRandomArray(50, 10, 100);
+    const newArray = generateRandomArray(arrayLength, 10);
     if (sorting) {
       isCancelled.current = true;
       setSorting(false);
@@ -86,6 +87,8 @@ const Visualizer: React.FC<VisualizerProps> = ({handleFlag, sharedArray, flag}) 
       disabled={sorting} 
       compareCount={compareCount}
       flag={flag}
+      arrayLength={arrayLength}
+      setArrayLength={setArrayLength}
       />
       <ArrayBars array={array} />
     </div>

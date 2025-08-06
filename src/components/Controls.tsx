@@ -10,14 +10,16 @@ interface ControlsProps {
     onStart: (algorithm: SortGenerator) => void;
     onReset: () => void;
     onPause: () => void;
+    setArrayLength: () => {};
     isPaused: boolean;
     disabled: boolean;
     compareCount: number | null;
     flag: number;
+    arrayLength: number;
 }
 
 const Controls: React.FC<ControlsProps> = ({ onStart, onReset, 
-    onPause, isPaused, disabled, compareCount, flag }) => {
+    onPause, isPaused, disabled, compareCount, flag, arrayLength, setArrayLength }) => {
     const [selected, setSelected] = React.useState<string>('bubble');
     
     const algoMap: Record<string, SortGenerator> = {
@@ -64,6 +66,7 @@ const Controls: React.FC<ControlsProps> = ({ onStart, onReset,
                 <button onClick={onPause} disabled={!disabled}>
                     {isPaused ? 'Resume' : 'Pause'}
                 </button>
+                <input type="number" min="0" max="500" value={arrayLength} onChange = {(e) => setArrayLength(Number(e.target.value))} style={{width:'60px'}} />
             </div>
             <div className="compareCount">
                 {compareCount !== null ? `비교 횟수(Comparisons): ${compareCount}` : 'Comparisons: 0'}
