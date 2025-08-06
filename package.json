@@ -2,6 +2,7 @@
   "name": "react-sort",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/dev/react-sort",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.4",
