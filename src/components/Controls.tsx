@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { SortGenerator } from '../algorithms/types.ts';
 import { bubbleSort } from '../algorithms/bubbleSort.ts';
 import { insertionSort } from '../algorithms/insertionSort.ts';
@@ -13,25 +13,39 @@ interface ControlsProps {
     isPaused: boolean;
     disabled: boolean;
     compareCount: number | null;
+    flag: number;
 }
 
-const Controls: React.FC<ControlsProps> = ({ onStart, onReset, onPause, isPaused, disabled, compareCount }) => {
+const Controls: React.FC<ControlsProps> = ({ onStart, onReset, 
+    onPause, isPaused, disabled, compareCount, flag }) => {
     const [selected, setSelected] = React.useState<string>('bubble');
+    
+    const algoMap: Record<string, SortGenerator> = {
+        bubble: bubbleSort,
+        insertion: insertionSort,
+        merge: mergeSort,
+        quick: quickSort,
+        selection: selectionSort,
+    };
+
+    const handleStart = () => {
+        onStart(algoMap[selected]);
+    };
+
+    useEffect(() => {
+			const run = async () => {
+        if (flag === 2) {
+					console.log("전체실행")
+          await onStart(algoMap[selected]);
+        }
+			}
+			run();
+    }, [flag]);
     
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelected(e.target.value);
     }
 
-    const handleStart = () => {
-        const algoMap: Record<string, SortGenerator> = {
-            bubble: bubbleSort,
-            insertion: insertionSort,
-            merge: mergeSort,
-            quick: quickSort,
-            selection: selectionSort,
-        };
-        onStart(algoMap[selected]);
-    };
 
     return (
         <div>

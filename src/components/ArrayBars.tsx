@@ -12,7 +12,7 @@ const ArrayBars: React.FC<ArrayBarsProps> = ({ array }) => {
             key={idx}
             style={{ 
                 height: `${value * 3}px`,
-                backgroundColor: `hsl(${(value / 100) * 240}, 80%, 50%)`
+                backgroundColor: `hsl(${(value / 100) * 300}, 80%, 50%)`
             }}
             className="bar"
         />
