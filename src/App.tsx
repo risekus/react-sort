@@ -51,7 +51,6 @@ const App: React.FC = () => {
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
         gap: '10px',
-        justifyContent: 'center',
       }}>
         {visualizers.map(id => (
           <Visualizer key={id} sharedArray={array} flag={flag} handleFlag={handleFlag} />
